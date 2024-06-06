@@ -1,0 +1,35 @@
+initial_paths:
+  path_progresESM: 'train_LAMLP_ESM2.txt'
+  checkpoint_pathESM: '../checkpoints/ESM2_only/CrossVal/Species/globalAvgtm_clean/Picrophilus_torridus_DSM9790_lysate/'
+  path_progresPiFold: 'train_LAMLP_PiFold.txt'
+  checkpoint_pathPiFold: '../checkpoints/PiFold_only/CrossVal/Species/globalAvgtm_clean/Picrophilus_torridus_DSM9790_lysate/'
+  path_progresMix: 'train_LAMLP_Mix.txt'
+  checkpoint_pathMix: '../checkpoints/Mix/CrossVal/Species/globalAvgtm_clean/Picrophilus_torridus_DSM9790_lysate/'
+  ESM_source: 'ESM2_single_embeddings_nobatches'
+  PiFold_source: 'PiFold_if1_embeddings'
+  prepro_train_emb_ESM: 'train_set_embeddings_ESM2_Ecoli3.pth'
+  prepro_test_emb_ESM: 'test_set_embeddings_ESM2_Ecoli3.pth'
+  prepro_val_emb_ESM: 'val_set_embeddings_ESM2_Ecoli3.pth'
+  prepro_train_emb_PiFold: 'train_set_IFPiFoldembeddings_Ecoli3.pth'
+  prepro_test_emb_PiFold: 'test_set_IFPiFoldembeddings_Ecoli3.pth'
+  prepro_val_emb_PiFold: 'val_set_IFPiFoldembeddings_Ecoli3.pth'
+  output_metrics_ESM_only: './crossval_metrics/metrics_per_species_dualloss_clean/ESM_only/Picrophilus_torridus_DSM9790_lysate/'
+  output_metrics_PiFold_only: './crossval_metrics/metrics_per_species_dualloss_clean/PiFold_only/Picrophilus_torridus_DSM9790_lysate/'
+  output_metrics_Both: './crossval_metrics/metrics_per_species_dualloss_clean/Both/Picrophilus_torridus_DSM9790_lysate/'
+loss_type:
+  loss: 'Dual'
+organism:
+  Global: False
+  organism: 'Picrophilus_torridus_DSM9790'
+  keyword: 'lysate'
+meltome:
+  path_meltome: '../datasets/FLIP/splits/meltome/splits/mixed_split.csv'
+  complete_meltome_db: '../datasets/FLIP/splits/meltome/full_dataset_sequences.fasta'
+  umap_clusters_clean_meltome_train: '../datasets/global_cleanup_meltome_all_set/train_MeltomeMix_for_cleaning_with_key_column.clusters.tsv'
+Pifold_pretrain:
+  svpath: '../ref_models/PiFold/results/'
+structures_path:
+  structuredir: '../datasets/Structures/'
+  meltome_struct_dir_labels: '../datasets/'
+ESM2embeddings:
+  dir_pre_generated_embeddings: '/var/tmp/sgal/prepro_embeddings/'

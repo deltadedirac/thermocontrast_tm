@@ -1,0 +1,54 @@
+py_file: 'LAMLP_Benchmark_all_taxonomy_08_April_2024.ipynb'
+# Configuration for running experiment related to specific species experiments
+spec_species:
+  # Bias Global Average Tm method 
+  spec_species_biasg:
+    job_lexem: 'sgal_species_biasg_'
+    config_path: 'configs/experiments_10_05_2024/species_specific/biasg/'
+    folder_path_out: 'results_exp10_05_2024/species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_biasg_species_'
+  # MSE loss for specific species
+  spec_species_MSE:
+    job_lexem: 'sgal_species_MSE_'
+    config_path: 'configs/experiments_10_05_2024/species_specific/MSE/'
+    folder_path_out: 'results_exp10_05_2024/species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_MSE_species_'
+  # balancing organisms per batch using MSE loss for specific species
+  spec_species_balanceMSE:
+    job_lexem: 'sgal_species_balanceMSE_'
+    config_path: 'configs/experiments_10_05_2024/species_specific/balanceMSE/'
+    folder_path_out: 'results_exp10_05_2024/species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_balanceMSE_species_'
+  # rankN loss for specific species
+  spec_species_rankN:
+    job_lexem: 'sgal_species_rankN_'
+    config_path: 'configs/experiments_10_05_2024/species_specific/rankN/'
+    folder_path_out: 'results_exp10_05_2024/species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_rankN_species_'
+global_species:
+  # Bias Global Average Tm method 
+  global_species_biasg:
+    job_lexem: 'sgal_globalspecies_biasg_'
+    config_path: 'configs/experiments_10_05_2024/global_vs_species/biasg/'
+    folder_path_out: 'results_exp10_05_2024/global_species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_biasg_glspecies_'
+  # MSE loss for global species
+  global_species_MSE:
+    job_lexem: 'sgal_globalspecies_MSE_'
+    config_path: 'configs/experiments_10_05_2024/global_vs_species/MSE/'
+    folder_path_out: 'results_exp10_05_2024/global_species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_MSE_glspecies_'
+  # balancing organisms per batch using MSE loss for global species
+  global_species_balanceMSE:
+    job_lexem: 'sgal_globalspecies_balanceMSE_'
+    config_path: 'configs/experiments_10_05_2024/global_vs_species/balanceMSE/'
+    folder_path_out: 'results_exp10_05_2024/global_species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_balanceMSE_glspecies_'
+  # rankN loss for global species
+  global_species_rankN:
+    job_lexem: 'sgal_globalspecies_rankN_'
+    config_path: 'configs/experiments_10_05_2024/global_vs_species/rankN/'
+    folder_path_out: 'results_exp10_05_2024/global_species/ipynbs/'
+    out_file_lexem: 'res_LAMLP_Benchmark_all_taxonomy_rankN_glspecies_'
+
+  

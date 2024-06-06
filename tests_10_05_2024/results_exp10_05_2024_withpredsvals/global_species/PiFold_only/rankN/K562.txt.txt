@@ -1,0 +1,4 @@
+MSE: tensor(5.0590, device='cuda:0')
+RMSE: tensor(2.2492, device='cuda:0')
+MAE: tensor(1.8709, device='cuda:0')
+Spearman Corr: tensor(0., device='cuda:0')
