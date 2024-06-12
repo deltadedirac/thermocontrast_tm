@@ -145,9 +145,9 @@ class PiFold_setup(Exp):
     def IF_repr(self, df, folder_path, **kargs):
         self.method.eval()
         embeddings = []#torch.zeros(len(df),512)
-        #import ipdb; ipdb.set_trace()
+        import ipdb; ipdb.set_trace()
         
-        corresp_idxdf_file = {}
+        #corresp_idxdf_file = {}
         if 'correspondence_idx_df_file' in kargs:
             corresp_idxdf_file = kargs['correspondence_idx_df_file']
 
@@ -156,12 +156,15 @@ class PiFold_setup(Exp):
                 #fpath = train.iloc[i].Structure_Alphafold THIS IS A SUPERSTUPID BUG
                 #if corresp_idxdf_file: #if not kargs 
                 '''SEE IF IT IS WORKING FINE'''
-                idx = ( i, corresp_idxdf_file[df.iloc[[i]].index.item()] )[ bool(corresp_idxdf_file)]
+                if 'corresp_idxdf_file' in locals(): idx = corresp_idxdf_file[df.iloc[[i]].index.item()]
+                else: idx = i
+                    
+                #idx = ( i, corresp_idxdf_file[df.iloc[[i]].index.item()] )[ 'corresp_idxdf_file' in locals() ]#bool(corresp_idxdf_file)]
                 #else:
                     
                 if os.path.exists(f"{folder_path}/{str(idx)+'_'+df.iloc[i].protein_id}.pt"):
                     tmp = torch.load(f"{folder_path}/{str(idx)+'_'+df.iloc[i].protein_id}.pt")
-                    embeddings.append( tmp.mean(0).reshape(1,-1))
+                    embeddings.append( tmp.mean(0).reshape(1,-1)) 
                 else:
                     fpath = df.iloc[i].Structure_Alphafold
                     

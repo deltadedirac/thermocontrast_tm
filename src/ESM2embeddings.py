@@ -58,7 +58,7 @@ class ESM2embeddings(baseEmbedding):
 
     def esm2embedding(self, all_data, device, truncate_length=1000, layer_index=6, pt_batch_size=1, folder_path='../prepro_embeddings/esm2_embeddings', **kargs):
         import os, ipdb
-        #ipdb.set_trace()
+        ipdb.set_trace()
         corresp_idxdf_file = {}
         
         if 'correspondence_idx_df_file' in kargs:
@@ -66,6 +66,7 @@ class ESM2embeddings(baseEmbedding):
         #embeddings = torch.tensor([]).to(device)
         #all_data.sequence = self.truncate(all_data.sequence.values, truncate_length)
         embeddings = torch.zeros(len(all_data), 1280)
+        
         
         for i in tqdm(range(0,len(all_data), pt_batch_size)):
 

@@ -60,10 +60,15 @@ class Trainer_Seq_Struct_general():
         else: second_val = True
         return first_val and second_val
     
+    def filter_pt_files(self, root_path):
+        paths = os.listdir( root_path )
+        pt_files = [path for path in paths if path.endswith('.pt')]
+        return pt_files[0]
+
     def __get_checkpoint_from_yaml(self, model, tag_main_path, tag_model, device):
         
         root_path = f"{self.yaml_pretrained_info[tag_main_path]}{self.yaml_pretrained_info[tag_model]}/"
-        best_checkpoint = os.listdir( root_path )[-1]
+        best_checkpoint = self.filter_pt_files(root_path)#os.listdir( root_path )[-1]
         
         model_ck, _, _ =\
                     self.load_checkpoint(f"{root_path}{best_checkpoint}", model)
@@ -77,7 +82,7 @@ class Trainer_Seq_Struct_general():
     
     def setup_training(self):
         
-        #import ipdb; ipdb.set_trace()
+        import ipdb; ipdb.set_trace()
         # paths to search pretrained models
 
         path_pred = self.search_pretrained( self.yaml_pretrained_info['main_path']  + self.yaml_pretrained_info['pred_suffixe'])
