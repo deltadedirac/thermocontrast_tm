@@ -82,7 +82,7 @@ class Trainer_Seq_Struct_general():
     
     def setup_training(self):
         
-        import ipdb; ipdb.set_trace()
+        #import ipdb; ipdb.set_trace()
         # paths to search pretrained models
 
         path_pred = self.search_pretrained( self.yaml_pretrained_info['main_path']  + self.yaml_pretrained_info['pred_suffixe'])
